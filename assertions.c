@@ -6,7 +6,7 @@
 /*   By: mmelo-da <mmelo-da@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 19:08:10 by mmelo-da          #+#    #+#             */
-/*   Updated: 2021/10/28 19:53:15 by mmelo-da         ###   ########.fr       */
+/*   Updated: 2021/10/29 10:56:34 by mmelo-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@ void	assert_equal_int(int actual, int expected, char *error_msg)
 	if (actual != expected)
 	{
 		assertion_fail("Recieved %d but Expected %d, %s\n",
+			actual, expected, error_msg);
+	}
+	else
+	{
+		assertion_pass();
+	}
+}
+
+void	assert_not_equal_int(int actual, int expected, char *error_msg)
+{
+	if (actual == expected)
+	{
+		assertion_fail("Expected %d to not equal %d, %s\n",
 			actual, expected, error_msg);
 	}
 	else
